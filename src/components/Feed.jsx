@@ -2,7 +2,7 @@ let posts = [
   {
     id: 1,
     author: "Paul Portillo",
-    profile: "./assets/profile.jpg",
+    profile: "https://my-daily-bootcamp-rojo.netlify.app/img/perfil.jpg",
     date: "04 de Julio, 2022",
     description: "aprendi a insertar imagen y icono",
     images: [],
@@ -10,7 +10,7 @@ let posts = [
   {
     id: 2,
     author: "Ronaldo Delgado",
-    profile: "./assets/companies/profile-2.jpg",
+    profile: "https://my-daily-bootcamp-rojo.netlify.app/img/perfil.jpg",
     date: "04 de Julio, 2022",
     description: "Aprendimos la jerarquia de clases",
     images: [],
@@ -18,7 +18,7 @@ let posts = [
   {
     id: 3,
     author: "Sandrito Hubel",
-    profile: "./assets/companies/profile-1.jpg",
+    profile: "https://my-daily-bootcamp-rojo.netlify.app/img/perfil.jpg",
     date: "04 de Julio, 2022",
     description: "Hoy jugamos lobo",
     images: [],
@@ -26,10 +26,10 @@ let posts = [
   {
     id: 4,
     author: "Cucarachita dominguez",
-    profile: "./assets/companies/profile-5.jpg",
+    profile: "https://my-daily-bootcamp-rojo.netlify.app/img/perfil.jpg",
     date: "04 de Julio, 2022",
     description: "Hoy aprendí a usar la target",
-    images: [],
+    images: "[]",
   },
 ];
 
@@ -39,7 +39,7 @@ function PostItem({ id, author, profile, images, description, date }) {
     <div class="public">
       <div class="pop-container">
         <button class="public-button">
-          <img src="assets/icons/dots.svg" alt="Menú de Opciones" />
+          <img src="http://127.0.0.1:5500/assets/icons/dots.svg" alt="Menú de Opciones" />
         </button>
         <div class="POP">
           <button class="popUp">
@@ -74,7 +74,7 @@ function PostItem({ id, author, profile, images, description, date }) {
         </div>
       </div>
       <div class="text">
-        <p>${description}</p>
+        <p>{description}</p>
       </div>
     </div>
   );
