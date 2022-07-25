@@ -33,37 +33,39 @@ let posts = [
   },
 ];
 
-
 function PostItem({ id, author, profile, images, description, date }) {
   return (
-    <div class="public">
-      <div class="pop-container">
-        <button class="public-button">
-          <img src="http://127.0.0.1:5500/assets/icons/dots.svg" alt="Menú de Opciones" />
+    <div className="public">
+      <div className="pop-container">
+        <button className="public-button">
+          <img
+            src="http://127.0.0.1:5500/assets/icons/dots.svg"
+            alt="Menú de Opciones"
+          />
         </button>
-        <div class="POP">
-          <button class="popUp">
+        <div className="POP">
+          <button className="popUp">
             <img src="./assets/basura.svg" />
             <p>Delete</p>
           </button>
         </div>
       </div>
-      <div class="public-date">
-        <div class="date-conte">
+      <div className="public-date">
+        <div className="date-conte">
           <a
-            class="link-public"
+            className="link-public"
             href="https://twitter.com/yummta?lang=es"
             target="_blank"
           >
             <img
-              class="date-img"
+              className="date-img"
               src={profile}
               alt="Foto de perfil del usuario"
             />
           </a>
-          <div class="date-text">
+          <div className="date-text">
             <a
-              class="link-public"
+              className="link-public"
               href="https://twitter.com/yummta?lang=es"
               target="_blank"
             >
@@ -73,7 +75,7 @@ function PostItem({ id, author, profile, images, description, date }) {
           </div>
         </div>
       </div>
-      <div class="text">
+      <div className="text">
         <p>{description}</p>
       </div>
     </div>
@@ -89,6 +91,5 @@ function Feed() {
     </div>
   );
 }
-
 
 export default Feed;
