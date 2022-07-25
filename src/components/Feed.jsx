@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-
-
 let posts = [
   {
     id: 1,
@@ -39,6 +37,16 @@ let posts = [
 
 function PostItem({ id, author, profile, images, description, date }) {
   const [showMenu, setShowMenu] = useState(false);
+  const [showModalDelete, setShowModalDelete] = useState(false);
+
+  function showModal() {
+    setShowMenu(false);
+    setShowModalDelete(true);
+  }
+
+  function closeModal() {
+    setShowModalDelete(false);
+  }
 
   return (
     <div className="public">
@@ -55,19 +63,17 @@ function PostItem({ id, author, profile, images, description, date }) {
           />
         </button>
         <div className="POP" style={{ display: showMenu ? "block" : "none" }}>
-          <button className="popUp">
+          <button onClick={showModal} className="popUp">
             <img src="/src/assets/BUTTON DELETE/basura.svg" />
             <p>Delete</p>
           </button>
         </div>
-          <div className="POP" style={{ display: showMenu ? "block" : "none" }}>
+        <div className="POP" style={{ display: showMenu ? "block" : "none" }}>
           <button className="popUp">
             <img src="/src/assets/BUTTON DELETE/pen-solid.svg" />
             <p>Modificar</p>
           </button>
-          </div>
-
-
+        </div>
       </div>
       <div className="public-date">
         <div className="date-conte">
@@ -97,6 +103,7 @@ function PostItem({ id, author, profile, images, description, date }) {
       <div className="text">
         <p>{description}</p>
       </div>
+      {showModalDelete && <DeletePost closeModal={closeModal} />}
     </div>
   );
 }
@@ -105,8 +112,28 @@ function Feed() {
   return (
     <div>
       {posts.map((post) => {
-        return <PostItem key={post.id} {...post} />;
+        console.log(post.id);
+        return <PostItem {...post} key={post.id} />;
       })}
+    </div>
+  );
+}
+
+function DeletePost({ closeModal }) {
+  return (
+    <div id="modal-delete" class="modal modalSytelDelete">
+      <div class="modal_window clases_window_delete">
+        <h3 class="tituloModalDelete">Are you sure you want to delete it?</h3>
+        <button class="modal_close" onClick={closeModal}>
+          &times;
+        </button>
+        <div class="modal-footer">
+          <button class="button1">Cancel</button>
+          <button class="button2" id="delete-post">
+            Delete
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

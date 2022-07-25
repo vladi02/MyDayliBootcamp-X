@@ -94,7 +94,6 @@
 	align-items: center;
   /* top: 188px; */
   z-index: 99;
- 
 }
 .modal .wrapper-modal{
   margin: 0 auto;
@@ -113,16 +112,17 @@
 .modal_close {
   position: absolute;
   cursor: pointer;
-  color: white;
+  color: red;
   top: -56px;
   right: 0;
   padding: 2px 12px;
   border-radius: 8px;
   font-size: 2.2em;
+  background-color: #f1f2f6;
 }
 .modal_close:hover {
   background: rgb(255, 255, 255, .12);
-  color: white;
+  color: red;
 }
 .modal_window textarea{
   box-sizing: border-box;
