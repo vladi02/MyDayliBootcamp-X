@@ -1,4 +1,4 @@
-import Feed from "./feed";
+import Feed from "./Feed";
 import SidebarRigth from "./SidebarRigth";
 import SiderBarleft from "./SidebarLeft";
 function TeamItem({ name, image }) {
@@ -19,7 +19,7 @@ function Main() {
         <SiderBarleft />
         <div className="daily-content">
           <div className="learning-content">
-            <a href="javascript:void(0);" onClick={"openModal()"}>
+            <a href="">
               <form className="learning-form">
                 <input
                   type="text"

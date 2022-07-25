@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap");
 
-.clases_window_delete{
-  gap:24px;
+.clases_window_delete {
+  gap: 24px;
   width: 307px;
 }
 
-.modalSytelDelete{
+.modalSytelDelete {
   justify-content: center;
 }
 
@@ -14,7 +14,6 @@
   display: flex;
   justify-content: space-around;
 }
-
 
 .button1 {
   display: flex;
@@ -32,10 +31,8 @@
   flex-grow: 1;
   color: #203758;
   border: none;
-  cursor : pointer;
+  cursor: pointer;
 }
-
-
 
 .button2 {
   display: flex;
@@ -55,19 +52,17 @@
   background-color: #f0f7ff;
   border: none;
 }
-.button2:hover{
+.button2:hover {
   color: #f0f7ff;
-  cursor : pointer;
+  cursor: pointer;
   background-color: #1877f2;
 }
-.button1:hover{
+.button1:hover {
   color: #040a10;
-  cursor : pointer;
+  cursor: pointer;
   background-color: #ccc;
 }
 
-.tituloModalDelete{
-
- text-align: center;
-  
+.tituloModalDelete {
+  text-align: center;
 }

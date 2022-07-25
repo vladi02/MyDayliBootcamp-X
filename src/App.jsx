@@ -11,8 +11,6 @@ function App() {
     <div>
       <Navbar />
       <Main />
-
-
     </div>
   );
 }
