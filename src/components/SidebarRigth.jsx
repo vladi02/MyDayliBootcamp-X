@@ -1,21 +1,21 @@
 function ItemStories({ name, profileImage, bg }) {
   return (
-    <a class="link-stories" href="#">
-      <li class="frame-storie">
+    <a className="link-stories" href="#">
+      <li className="frame-storie">
         <div
-          class="img-storie1 img-storie"
+          className="img-storie1 img-storie"
           style={{
             background: `url('${bg}')`,
           }}
         >
           <img
-            class="profile-photo"
+            className="profile-photo"
             src={profileImage}
             alt="foto de perfil de un usuario"
           />
-          <h3 class="profile-name">{name}</h3>
+          <h3 className="profile-name">{name}</h3>
         </div>
-        <div class="storie-borde"></div>
+        <div className="storie-borde"></div>
       </li>
     </a>
   );
@@ -23,9 +23,9 @@ function ItemStories({ name, profileImage, bg }) {
 
 function Stories() {
   return (
-    <div class="stories">
-      <h2 class="tittle-stories">Stories</h2>
-      <ul class="stories-sqare">
+    <div className="stories">
+      <h2 className="tittle-stories">Stories</h2>
+      <ul className="stories-sqare">
         <ItemStories
           name="Kierra Gentry"
           profileImage="https://my-daily-bootcamp.netlify.app/assets/stories/profile%201.jpg"
@@ -57,27 +57,27 @@ function ItemSection({
   participants,
 }) {
   return (
-    <div class="notice-single">
+    <div className="notice-single">
       <article
-        class="notice-article notice-article1"
+        className="notice-article notice-article1"
         style={{
           background: `url('${bg}')`,
         }}
       >
-        <h3 class="notice-tittle">{title}</h3>
-        <p class="notice-text">{parraf}</p>
-        <a class="notice-button" href={redsocial} target="_blank">
+        <h3 className="notice-tittle">{title}</h3>
+        <p className="notice-text">{parraf}</p>
+        <a className="notice-button" href={redsocial} target="_blank">
           Explore All
         </a>
       </article>
 
-      <footer class="notice-footer">
-        <div class="notice-avatars">
-          <img class="avatar avatar1" src={image1} alt="photo 1" />
-          <img class="avatar avatar2" src={image2} alt="photo 2" />
-          <img class="avatar avatar3" src={image3} alt="photo 3" />
+      <footer className="notice-footer">
+        <div className="notice-avatars">
+          <img className="avatar avatar1" src={image1} alt="photo 1" />
+          <img className="avatar avatar2" src={image2} alt="photo 2" />
+          <img className="avatar avatar3" src={image3} alt="photo 3" />
         </div>
-        <span class="participants-text">{participants}</span>
+        <span className="participants-text">{participants}</span>
       </footer>
     </div>
   );
@@ -85,7 +85,7 @@ function ItemSection({
 
 function Section() {
   return (
-    <div class="notice-section">
+    <div className="notice-section">
       <ItemSection
         title="BOOTCAMP X"
         parraf="Learn working in a real environment"
@@ -112,13 +112,13 @@ function Section() {
 
 function ItemFollowP({ link, image, namePerfil }) {
   return (
-    <div class="follow-date">
-      <div class="info">
-        <a class="link-follow" href={link} target="_blank">
+    <div className="follow-date">
+      <div className="info">
+        <a className="link-follow" href={link} target="_blank">
           <img
             src={image}
             alt="foto de perfil de un usuario"
-            class="instructor-profile"
+            className="instructor-profile"
           />
           <p>{namePerfil}</p>
           <img
@@ -127,7 +127,7 @@ function ItemFollowP({ link, image, namePerfil }) {
           />
         </a>
       </div>
-      <button class="follow-1">
+      <button className="follow-1">
         <b>Follow</b>
       </button>
     </div>
@@ -135,10 +135,10 @@ function ItemFollowP({ link, image, namePerfil }) {
 }
 function FollowP() {
   return (
-    <div class="Follow-P">
+    <div className="Follow-P">
       <h3>Who to Follow</h3>
 
-      <div class="follow">
+      <div className="follow">
         <ItemFollowP
           link="https://twitter.com/condef5"
           image="https://my-daily-bootcamp.netlify.app/assets/instructors/condef5.jpeg"
@@ -156,11 +156,11 @@ function FollowP() {
 
 function SidebarRigth() {
   return (
-    <div class="sidebar-right">
+    <div className="sidebar-right">
       <Stories />
       <Section />
       <FollowP />
-      <div class="footer">Bootcamp X © 2022</div>
+      <div className="footer">Bootcamp X © 2022</div>
     </div>
   );
 }

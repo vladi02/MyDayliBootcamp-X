@@ -1,10 +1,10 @@
 function Document() {
   return (
-    <div id="documents" class="modal">
-      <div class="wrapper-modal">
+    <div id="documents" className="modal">
+      <div className="wrapper-modal">
         <div>
-          <div class="modal_window">
-            <a class="modal_close" onclick="closeModal()">
+          <div className="modal_window">
+            <a className="modal_close" onClick={"closeModal()"}>
               &times;
             </a>
             <h3>What did you learn today Paul?</h3>
@@ -14,21 +14,21 @@ function Document() {
               placeholder="Today I learned..."
               maxlength="140"
             ></textarea>
-            <span class="msg-error-blank">
+            <span className="msg-error-blank">
               Really? Did not you learning anything? This field is required!
             </span>
-            <div class="buttons-post">
-              <div class="icons-bottom">
-                <span class="container-input">
+            <div className="buttons-post">
+              <div className="icons-bottom">
+                <span className="container-input">
                   <input
-                    class="icon-item-bottom inputfile"
+                    className="icon-item-bottom inputfile"
                     type="file"
                     id="file-image"
                     multiple
                   />
                   <label for="file-image">
                     <svg
-                      class="iborrainputfile"
+                      className="iborrainputfile"
                       width="18"
                       height="19"
                       viewBox="0 0 18 19"
@@ -45,7 +45,7 @@ function Document() {
                     </svg>
                   </label>
                 </span>
-                <span class="icon-item-bottom">
+                <span className="icon-item-bottom">
                   <svg
                     width="18"
                     height="19"
@@ -70,30 +70,30 @@ function Document() {
                   </svg>
                 </span>
               </div>
-              <button class="button-bottom publishButton">Publish</button>
+              <button className="button-bottom publishButton">Publish</button>
             </div>
           </div>
-          <div class="container-thumbnails">
-            <div class="container-img">
+          <div className="container-thumbnails">
+            <div className="container-img">
               <img
                 src="https://my-daily-bootcamp-rojo.netlify.app/img/perfil.jpg"
                 alt=""
               />
-              <button class="delete-button">Delete</button>
+              <button className="delete-button">Delete</button>
             </div>
-            <div class="container-img">
+            <div className="container-img">
               <img
                 src="https://my-daily-bootcamp-rojo.netlify.app/img/perfil.jpg"
                 alt=""
               />
-              <button class="delete-button">Delete</button>
+              <button className="delete-button">Delete</button>
             </div>
-            <div class="container-img">
+            <div className="container-img">
               <img
                 src="https://my-daily-bootcamp-rojo.netlify.app/img/perfil.jpg"
                 alt=""
               />
-              <button class="delete-button">Delete</button>
+              <button className="delete-button">Delete</button>
             </div>
           </div>
         </div>
