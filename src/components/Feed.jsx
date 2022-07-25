@@ -105,7 +105,7 @@ function Feed() {
   return (
     <div>
       {posts.map((post) => {
-        return <PostItem {...post} />;
+        return <PostItem key={post.id} {...post} />;
       })}
     </div>
   );

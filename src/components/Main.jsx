@@ -1,6 +1,9 @@
-import Feed from "./feed";
+import Feed from "./Feed";
 import SidebarRigth from "./SidebarRigth";
 import SiderBarleft from "./SidebarLeft";
+import { useState } from "react";
+import Document from "./Document";
+
 function TeamItem({ name, image }) {
   return (
     <div className="date-teams1">
@@ -13,22 +16,35 @@ function TeamItem({ name, image }) {
 }
 
 function Main() {
+  const [showModalInput, setShowModalInput] = useState(false);
+
+  function OpenModalInput() {
+    setShowModalInput(true);
+    console.log("vivo te crees");
+  }
+
+  function closeModalInput() {
+    console.log(1231);
+    setShowModalInput(false);
+  }
+
   return (
     <div>
       <main className="main">
         <SiderBarleft />
         <div className="daily-content">
-          <div className="learning-content">
-            <a href="javascript:void(0);" onClick={"openModal()"}>
-              <form className="learning-form">
+          <div className="learning-content" onClick={OpenModalInput}>
+            <div>
+              <div
+                style={{ display: showModalInput ? "block" : "flex" }}
+                className="learning-form"
+              >
                 <input
                   type="text"
                   className="learning-input"
                   placeholder="What did you learn today Paul?"
+                  pointerEvents="none"
                 />
-                <span className="menu_item_text menu_item_text_docs">
-                  Documentos
-                </span>
                 <button className="learning-button" type="button">
                   <svg
                     width="16"
@@ -51,13 +67,14 @@ function Main() {
                     </g>
                   </svg>
                 </button>
-              </form>
-            </a>
+              </div>
+            </div>
           </div>
           <Feed />
         </div>
         <SidebarRigth />
       </main>
+      {showModalInput && <Document closeModal={closeModalInput} />}
     </div>
   );
 }
