@@ -1,3 +1,7 @@
+import { useState } from "react";
+
+
+
 let posts = [
   {
     id: 1,
@@ -34,21 +38,36 @@ let posts = [
 ];
 
 function PostItem({ id, author, profile, images, description, date }) {
+  const [showMenu, setShowMenu] = useState(false);
+
   return (
     <div className="public">
       <div className="pop-container">
-        <button className="public-button">
+        <button
+          className="public-button"
+          onClick={() => {
+            setShowMenu(!showMenu);
+          }}
+        >
           <img
-            src="http://127.0.0.1:5500/assets/icons/dots.svg"
+            src="/src/assets/BUTTON DELETE/dots.svg"
             alt="Menú de Opciones"
           />
         </button>
-        <div className="POP">
+        <div className="POP" style={{ display: showMenu ? "block" : "none" }}>
           <button className="popUp">
-            <img src="./assets/basura.svg" />
+            <img src="/src/assets/BUTTON DELETE/basura.svg" />
             <p>Delete</p>
           </button>
         </div>
+          <div className="POP" style={{ display: showMenu ? "block" : "none" }}>
+          <button className="popUp">
+            <img src="/src/assets/BUTTON DELETE/pen-solid.svg" />
+            <p>Modificar</p>
+          </button>
+          </div>
+
+
       </div>
       <div className="public-date">
         <div className="date-conte">

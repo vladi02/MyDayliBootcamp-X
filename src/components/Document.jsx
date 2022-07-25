@@ -4,7 +4,7 @@ function Document() {
       <div className="wrapper-modal">
         <div>
           <div className="modal_window">
-            <a className="modal_close" onClick="closeModal()">
+            <a className="modal_close" onClick={"closeModal()"}>
               &times;
             </a>
             <h3>What did you learn today Paul?</h3>

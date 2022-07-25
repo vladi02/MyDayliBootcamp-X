@@ -19,7 +19,7 @@ function Main() {
         <SiderBarleft />
         <div className="daily-content">
           <div className="learning-content">
-            <a href="javascript:void(0);" onClick="openModal()">
+            <a href="javascript:void(0);" onClick={"openModal()"}>
               <form className="learning-form">
                 <input
                   type="text"
