@@ -1,39 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-let posts = [
-  {
-    id: 1,
-    author: "Paul Portillo",
-    profile: "https://my-daily-bootcamp-rojo.netlify.app/img/perfil.jpg",
-    date: "04 de Julio, 2022",
-    description: "aprendi a insertar imagen y icono",
-    images: [],
-  },
-  {
-    id: 2,
-    author: "Ronaldo Delgado",
-    profile: "https://my-daily-bootcamp-rojo.netlify.app/img/perfil.jpg",
-    date: "04 de Julio, 2022",
-    description: "Aprendimos la jerarquia de clases",
-    images: [],
-  },
-  {
-    id: 3,
-    author: "Sandrito Hubel",
-    profile: "https://my-daily-bootcamp-rojo.netlify.app/img/perfil.jpg",
-    date: "04 de Julio, 2022",
-    description: "Hoy jugamos lobo",
-    images: [],
-  },
-  {
-    id: 4,
-    author: "Cucarachita dominguez",
-    profile: "https://my-daily-bootcamp-rojo.netlify.app/img/perfil.jpg",
-    date: "04 de Julio, 2022",
-    description: "Hoy aprendí a usar la target",
-    images: "[]",
-  },
-];
+const apiUrl = "https://my-daily-bootcamp.herokuapp.com/posts.json";
+
+
+async function getPosts() {
+  const response = await fetch(apiUrl);
+  return await response.json();
+}
 
 function PostItem({ id, author, profile, images, description, date }) {
   const [showMenu, setShowMenu] = useState(false);
@@ -109,6 +82,14 @@ function PostItem({ id, author, profile, images, description, date }) {
 }
 
 function Feed() {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    getPosts().then((data) => setPosts(data));
+  }, []);
+
+  console.log(posts);
+
   return (
     <div>
       {posts.map((post) => {
