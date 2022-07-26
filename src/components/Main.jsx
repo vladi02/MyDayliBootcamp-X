@@ -2,7 +2,7 @@ import Feed from "./Feed";
 import SidebarRigth from "./SidebarRigth";
 import SiderBarleft from "./SidebarLeft";
 import { useState } from "react";
-import Document from "./Document";
+import Document from "./CreatePostModal";
 
 function TeamItem({ name, image }) {
   return (
@@ -20,7 +20,6 @@ function Main() {
 
   function OpenModalInput() {
     setShowModalInput(true);
-    console.log("vivo te crees");
   }
 
   function closeModalInput() {
