@@ -110,19 +110,20 @@ function DeletePost({ closeModal, id }) {
       .then((response) => response.json())
       .then((data) => {
         closeModal();
+        console.log("vivo eres")
       });
   }
 
   return (
     <div id="modal-delete" class="modal modalSytelDelete">
-      <div class="modal_window clases_window_delete">
-        <h3 class="tituloModalDelete">Are you sure you want to delete it?</h3>
-        <button class="modal_close" onClick={closeModal}>
+      <div className="modal_window clases_window_delete">
+        <h3 className="tituloModalDelete">Are you sure you want to delete it?</h3>
+        <button className="modal_close" onClick={closeModal}>
           &times;
         </button>
-        <div class="modal-footer">
-          <button class="button1">Cancel</button>
-          <button class="button2" id="delete-post" onClick={handleDelete}>
+        <div className="modal-footer">
+          <button className="button1">Cancel</button>
+          <button className="button2" id="delete-post" onClick={handleDelete}>
             Delete
           </button>
         </div>
