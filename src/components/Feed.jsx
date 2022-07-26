@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 
-const apiUrl = "https://my-daily-bootcamp.herokuapp.com/posts.json";
-
+const apiUrl = "https://my-daily-bootcamp.herokuapp.com";
 
 async function getPosts() {
-  const response = await fetch(apiUrl);
+  const response = await fetch(apiUrl + "/posts.json");
   return await response.json();
 }
 
@@ -57,7 +56,7 @@ function PostItem({ id, author, profile, images, description, date }) {
           >
             <img
               className="date-img"
-              src={profile}
+              src={author.profile_url}
               alt="Foto de perfil del usuario"
             />
           </a>
@@ -67,7 +66,7 @@ function PostItem({ id, author, profile, images, description, date }) {
               href="https://twitter.com/yummta?lang=es"
               target="_blank"
             >
-              <h3>{author}</h3>
+              <h3>{author.full_name}</h3>
             </a>
             <p>{date}</p>
           </div>
@@ -76,7 +75,7 @@ function PostItem({ id, author, profile, images, description, date }) {
       <div className="text">
         <p>{description}</p>
       </div>
-      {showModalDelete && <DeletePost closeModal={closeModal} />}
+      {showModalDelete && <DeletePost closeModal={closeModal} id={id} />}
     </div>
   );
 }
@@ -100,7 +99,20 @@ function Feed() {
   );
 }
 
-function DeletePost({ closeModal }) {
+function DeletePost({ closeModal, id }) {
+  // const [deletePost, setDeletePost]=useState([]);
+  // useEffect(() => {
+  //   setDeletePost().then((data) => setPosts(data));
+  // }, []);
+
+  function handleDelete() {
+    fetch(apiUrl + "/posts/" + id + ".json", { method: "DELETE" })
+      .then((response) => response.json())
+      .then((data) => {
+        closeModal();
+      });
+  }
+
   return (
     <div id="modal-delete" class="modal modalSytelDelete">
       <div class="modal_window clases_window_delete">
@@ -110,7 +122,7 @@ function DeletePost({ closeModal }) {
         </button>
         <div class="modal-footer">
           <button class="button1">Cancel</button>
-          <button class="button2" id="delete-post">
+          <button class="button2" id="delete-post" onClick={handleDelete}>
             Delete
           </button>
         </div>
