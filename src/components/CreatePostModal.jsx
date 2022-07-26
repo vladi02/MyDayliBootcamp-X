@@ -1,4 +1,24 @@
-function Document({ closeModal }) {
+import { useState } from "react";
+
+function CreatePostModal({ closeModal }) {
+  const [name, setName] = useState("");
+  const [error, setError] = useState(false);
+
+  function handleName(event) {
+    setError(false);
+    setName(event.currentTarget.value);
+  }
+
+  function handleSubmit(event) {
+    if (name == "") {
+      setError(true);
+    }
+
+    console.log(name);
+
+    // logica para guardar nuevo post
+  }
+
   return (
     <div id="documents" className="modal">
       <div className="wrapper-modal">
@@ -12,11 +32,15 @@ function Document({ closeModal }) {
               name="post-area"
               id="post-area"
               placeholder="Today I learned..."
-              // maxlength="140"
+              maxlength="140"
+              value={name}
+              onChange={handleName}
             ></textarea>
-            <span className="msg-error-blank">
-              Really? Did not you learning anything? This field is required!
-            </span>
+            {error && (
+              <span className="msg-error-blank">
+                Really? Did not you learning anything? This field is required!
+              </span>
+            )}
             <div className="buttons-post">
               <div className="icons-bottom">
                 <span className="container-input">
@@ -70,7 +94,12 @@ function Document({ closeModal }) {
                   </svg>
                 </span>
               </div>
-              <button className="button-bottom publishButton">Publish</button>
+              <button
+                className="button-bottom publishButton"
+                onClick={handleSubmit}
+              >
+                Publish
+              </button>
             </div>
           </div>
           <div className="container-thumbnails">
@@ -101,4 +130,4 @@ function Document({ closeModal }) {
     </div>
   );
 }
-export default Document;
+export default CreatePostModal;
