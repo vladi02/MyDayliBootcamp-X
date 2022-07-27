@@ -71,7 +71,7 @@ function MyTeam() {
   );
 }
 
-function SideBarleft() {
+function SideBarLeft() {
   return (
     <div className="sidebar-left">
       <CardProfile />
@@ -80,4 +80,4 @@ function SideBarleft() {
   );
 }
 
-export default SideBarleft;
+export default SideBarLeft;
