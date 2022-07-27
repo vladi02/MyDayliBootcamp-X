@@ -1,6 +1,6 @@
 import Feed from "./Feed";
 import SidebarRigth from "./SidebarRigth";
-import SiderBarleft from "./SidebarLeft";
+import SideBarleft from "./SideBarLeft";
 import { useState } from "react";
 import Document from "./CreatePostModal";
 
@@ -23,14 +23,12 @@ function Main() {
   }
 
   function closeModalInput() {
-    console.log(1231);
     setShowModalInput(false);
   }
-
   return (
     <div>
       <main className="main">
-        <SiderBarleft />
+        <SideBarleft />
         <div className="daily-content">
           <div className="learning-content" onClick={OpenModalInput}>
             <div>

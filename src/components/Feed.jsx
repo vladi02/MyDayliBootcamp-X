@@ -87,12 +87,9 @@ function Feed() {
     getPosts().then((data) => setPosts(data));
   }, []);
 
-  console.log(posts);
-
   return (
     <div>
       {posts.map((post) => {
-        console.log(post.id);
         return <PostItem {...post} key={post.id} />;
       })}
     </div>
@@ -110,14 +107,16 @@ function DeletePost({ closeModal, id }) {
       .then((response) => response.json())
       .then((data) => {
         closeModal();
-        console.log("vivo eres")
+        console.log("vivo eres");
       });
   }
 
   return (
     <div id="modal-delete" class="modal modalSytelDelete">
       <div className="modal_window clases_window_delete">
-        <h3 className="tituloModalDelete">Are you sure you want to delete it?</h3>
+        <h3 className="tituloModalDelete">
+          Are you sure you want to delete it?
+        </h3>
         <button className="modal_close" onClick={closeModal}>
           &times;
         </button>
