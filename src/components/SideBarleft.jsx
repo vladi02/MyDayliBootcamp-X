@@ -48,7 +48,7 @@ function TeamItem({ name, image }) {
 
 function MyTeam() {
   const [users, setUsers] = useState([]);
-  
+
   useEffect(() => {
     getUsers().then((data) => setUsers(data));
   }, []);
@@ -57,8 +57,14 @@ function MyTeam() {
     <div className="teams">
       <h2>My team</h2>
       <div className="container-team">
-        {users.map((user) => {
-          return <TeamItem name={user.full_name} image={user.profile_url} />;
+        {users.map((user, index) => {
+          return (
+            <TeamItem
+              name={user.full_name}
+              image={user.profile_url}
+              key={index}
+            />
+          );
         })}
       </div>
     </div>

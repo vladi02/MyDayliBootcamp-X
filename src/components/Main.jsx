@@ -1,6 +1,6 @@
 import Feed from "./Feed";
 import SidebarRigth from "./SidebarRigth";
-import SideBarleft from "./SideBarLeft";
+import SideBarLeft from "./SideBarLeft";
 import { useState } from "react";
 import Document from "./CreatePostModal";
 
@@ -28,7 +28,7 @@ function Main() {
   return (
     <div>
       <main className="main">
-        <SideBarleft />
+        <SideBarLeft />
         <div className="daily-content">
           <div className="learning-content" onClick={OpenModalInput}>
             <div>
