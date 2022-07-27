@@ -48,7 +48,7 @@ function TeamItem({ name, image }) {
 
 function MyTeam() {
   const [users, setUsers] = useState([]);
-
+  
   useEffect(() => {
     getUsers().then((data) => setUsers(data));
   }, []);
