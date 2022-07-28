@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import dotsImage from "../assets/BUTTON DELETE/dots.svg";
+import buttonDelete from "../assets/BUTTON DELETE/basura.svg";
+import buttonEdit from "../assets/BUTTON DELETE/pen-solid.svg";
 
 const apiUrl = "https://my-daily-bootcamp.herokuapp.com";
 
@@ -29,20 +32,17 @@ function PostItem({ id, author, profile, images, description, date }) {
             setShowMenu(!showMenu);
           }}
         >
-          <img
-            src="/src/assets/BUTTON DELETE/dots.svg"
-            alt="Menú de Opciones"
-          />
+          <img src={dotsImage} alt="Menú de Opciones" />
         </button>
         <div className="POP" style={{ display: showMenu ? "block" : "none" }}>
           <button onClick={showModal} className="popUp">
-            <img src="/src/assets/BUTTON DELETE/basura.svg" />
+            <img src={buttonDelete} />
             <p>Delete</p>
           </button>
         </div>
         <div className="POP" style={{ display: showMenu ? "block" : "none" }}>
           <button className="popUp">
-            <img src="/src/assets/BUTTON DELETE/pen-solid.svg" />
+            <img src={buttonEdit} />
             <p>Modificar</p>
           </button>
         </div>
